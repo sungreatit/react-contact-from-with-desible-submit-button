@@ -1,0 +1,95 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(173, 218, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  color: red;
+  font-weight: normal;
+}
+
+.from-container {
+  display: flex;
+  width: 400px;
+  min-height: 280px;
+  padding: 15px 10px;
+  flex-direction: column;
+  background-color: rgb(51, 54, 189);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.input {
+  max-width: 100%;
+  padding: 8px;
+  font-size: 18px;
+
+  text-shadow: 1px 1px 6px rgba(142, 150, 150, 1);
+  border: none !important;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+label {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: capitalize;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+  margin-top: 8px;
+}
+
+.message {
+  max-width: 100%;
+  height: 120px;
+  outline: none;
+  font-size: 20px;
+  padding: 8px;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.53);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+button {
+  padding: 8px;
+  margin: 20px 0px;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+button:hover {
+  background: black;
+  color: #fff;
+}
