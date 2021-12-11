@@ -2,34 +2,7 @@
 import { useFormik } from 'formik';
 import React from 'react';
 import styled from 'styled-components';
-
-const validate = (values) => {
-    const errors = {};
-    if (!values.firstName) {
-        errors.firstName = 'Frist Name Require';
-    } else if (values.firstName.length > 15) {
-        errors.firstName = 'Must be 15 characters or less';
-    }
-
-    if (!values.lastName) {
-        errors.lastName = 'Last Name Require';
-    } else if (values.lastName.length > 20) {
-        errors.lastName = 'Must be 20 characters or less';
-    }
-
-    if (!values.email) {
-        errors.email = 'Email Require';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = 'Invalid email address';
-    }
-    if (!values.message) {
-        errors.message = 'Meassage Require';
-    } else if (values.message.length > 500) {
-        errors.message = 'Must be 500 characters or less';
-    }
-
-    return errors;
-};
+import * as Yup from 'yup';
 
 const SignupForm = function SignupForm() {
     // Note that we have to initialize ALL of fields with values. These
@@ -42,9 +15,14 @@ const SignupForm = function SignupForm() {
             lastName: '',
             email: '',
             message: '',
-            validateOnMount: true, // <================= Add this
+            validateOnMount: true, // button desibel code
         },
-        validate,
+        validationSchema: Yup.object().shape({
+            firstName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
+            lastName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
+            email: Yup.string().email('Invalid email').required('Required'),
+            message: Yup.string().min(10, 'Too Short!').max(500, 'Too Long').required('Required'),
+        }),
         onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2));
         },
